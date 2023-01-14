@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { leftNavbarButtonsList } from "../../lib/leftNavbarButtons";
+
+import { LeftNavbarButtonsList } from "../../lib/LeftNavbarButtons";
 
 export default function LeftNavbar() {
   return (
     <div className="w-[88px] xl:w-[275px] text-xl p-2">
       <div className="fixed flex flex-col justify-between w-[72px] xl:w-[259px]">
         <nav className="flex flex-col w-full text-xl">
-          {leftNavbarButtonsList.map(({ label, href, icon }, index) => (
+          {LeftNavbarButtonsList.map(({ label, href, icon }, index) => (
             <Link
               className="flex justify-end xl:justify-start group"
               href={href}

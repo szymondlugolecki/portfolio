@@ -1,19 +1,18 @@
-import Link from "next/link";
-import { author, shortDateFormat } from "../../lib/constants";
-import type { PostData } from "../types";
-import PostInteractionPanel from "./InteractionPanel";
 import MyAvatar from "../User/MyAvatar";
 import VerifiedCheckbox from "../User/VerifiedCheckbox";
+import PostInteractionPanel from "../Post/InteractionPanel";
+import SkillBar from "./SkillBar";
 
-export default function Post({ post }: { post: PostData }) {
-  const { content, date, category, skillBars } = post;
+import { author, shortDateFormat } from "../../lib/constants";
+
+import type { PostData } from "../types";
+
+export default function ReplyPost({ postData }: { postData: PostData }) {
+  const { content, date, skillBars } = postData;
 
   return (
-    <Link
-      href={"/" + category}
-      className="border-b-[1px] border-[#333] select-none"
-    >
-      <div className="flex px-3 py-2 text-[15px] font-normal leading-5 antialiased">
+    <div className="border-b-[1px] border-[#333] cursor-pointer">
+      <div className="flex px-4 py-3 text-[15px] font-normal leading-5 antialiased">
         {/* Avatar Section */}
         <div className="flex flex-col justify-center h-full">
           <MyAvatar size={48} />
@@ -34,11 +33,19 @@ export default function Post({ post }: { post: PostData }) {
           </div>
           {/* Post Content */}
           <div>
-            <p className="break-words whitespace-pre-line">{content}</p>
+            <p className="mb-2 break-words whitespace-pre-line">{content}</p>
+            {skillBars?.map(({ label, value, color }, index) => (
+              <SkillBar
+                skillLabel={label}
+                skillValue={value}
+                skillColor={color}
+                key={index}
+              />
+            ))}
           </div>
           <PostInteractionPanel />
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

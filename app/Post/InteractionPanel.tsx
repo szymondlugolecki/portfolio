@@ -6,7 +6,7 @@ import {
   AntennaBars5,
 } from "tabler-icons-react";
 
-export default function PostInteractionPanel({}) {
+export default function PostInteractionPanel() {
   return (
     <div className="w-full mt-2">
       <div className="flex justify-between py-1 max-w-[425px] relative">

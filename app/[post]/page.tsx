@@ -1,16 +1,21 @@
 import Link from "next/link";
+
+import LargePost from "../LargePost";
+import ReplyPost from "../ReplyPost";
+
 import posts from "../../lib/posts";
 
 import { ArrowLeft } from "tabler-icons-react";
-import LargePost from "../LargePost";
 
 export default function PostPage({ params }: { params: { post: string } }) {
   const postHref = params.post.toLowerCase();
 
   const parentPost = posts.find(
-    (post) => post.href === postHref && post.type === "parent"
+    (post) => post.category === postHref && post.type === "parent"
   );
-  // const childrenPosts = posts.filter((post) => post.href === postHref);
+  const childrenPosts = posts.filter(
+    (post) => post.category === postHref && post.type === "child"
+  );
 
   if (!parentPost) {
     return (
@@ -23,7 +28,7 @@ export default function PostPage({ params }: { params: { post: string } }) {
   return (
     <>
       <Link
-        href=""
+        href="/"
         className="sticky h-[53px] px-4 flex justify-start items-center"
       >
         <div className="min-w-[56px]">
@@ -39,6 +44,9 @@ export default function PostPage({ params }: { params: { post: string } }) {
       {/* Parent Post */}
       <LargePost postData={parentPost} />
       {/* Children Posts */}
+      {childrenPosts.map((post, index) => (
+        <ReplyPost postData={post} key={index} />
+      ))}
     </>
   );
 }

@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { Star } from "tabler-icons-react";
-import posts from "../lib/posts";
+
 import Post from "./Post";
+import { Star } from "tabler-icons-react";
+
+import posts from "../lib/posts";
 
 export default function Home() {
   return (
     <>
       <Link
-        href=""
+        href="/"
         className="sticky h-[53px] px-4 flex justify-between items-center border-b-[1px] border-[#333]"
       >
         <h2 className="text-xl font-bold">Home</h2>

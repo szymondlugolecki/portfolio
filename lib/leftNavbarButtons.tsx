@@ -5,9 +5,10 @@ import {
   Phone,
   Brain,
 } from "tabler-icons-react";
+
 import type { NavbarButtonData } from "../app/types";
 
-export const leftNavbarButtonsList: NavbarButtonData[] = [
+export const LeftNavbarButtonsList: NavbarButtonData[] = [
   {
     label: "Home",
     href: "/",

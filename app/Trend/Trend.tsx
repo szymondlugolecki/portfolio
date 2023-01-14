@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getRandomInt } from "../../lib/utils";
+
 import type { TrendData } from "../types";
 
 export default function Trend({ trendData }: { trendData: TrendData }) {

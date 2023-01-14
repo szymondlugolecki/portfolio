@@ -1,15 +1,9 @@
-import {
-  MessageShare,
-  Heart,
-  Share,
-  MessageCircle2,
-  AntennaBars5,
-} from "tabler-icons-react";
+import { MessageShare, Heart, Share, MessageCircle2 } from "tabler-icons-react";
 
-export default function LargeInteractionPanel({}) {
+export default function LargeInteractionPanel() {
   return (
     <div className="w-full mt-3">
-      <div className="w-full flex justify-evenly py-1 relative min-h-[48px] border-[#333] border-t-[1px]">
+      <div className="w-full flex justify-evenly pt-1 relative min-h-[48px] border-[#333] border-t-[1px]">
         <button className="min-h-[20px]">
           <div className="relative">
             <div className="peer absolute z-50 top-0 bottom-0 left-0 right-0 m-[-8px] rounded-full inline-flex hover:bg-[#1d9bf0] hover:bg-opacity-10 duration-200" />

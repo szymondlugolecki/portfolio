@@ -1,11 +1,11 @@
 import localFont from "@next/font/local";
-import Link from "next/link";
-import posts from "../lib/posts";
-import trends from "../lib/trends";
+
 import LeftNavbar from "./LeftNavbar";
-import Post from "./Post";
-import { Star } from "tabler-icons-react";
 import Trend from "./Trend";
+import { Search } from "tabler-icons-react";
+
+import { shuffleArray } from "../lib/utils";
+import trends from "../lib/trends";
 
 import "./globals.css";
 
@@ -13,22 +13,22 @@ const myFont = localFont({
   variable: "--font-chirp",
   src: [
     {
-      path: "./chirp-regular-web.woff",
+      path: "./Fonts/chirp-regular-web.woff",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./chirp-medium-web.woff",
+      path: "./Fonts/chirp-medium-web.woff",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./chirp-bold-web.woff",
+      path: "./Fonts/chirp-bold-web.woff",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./chirp-heavy-web.woff",
+      path: "./Fonts/chirp-heavy-web.woff",
       weight: "800",
       style: "normal",
     },
@@ -40,12 +40,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const shuffledTrendsArray = shuffleArray(trends);
+
   return (
     <html lang="en" className={`grid h-full ${myFont.variable}`}>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
       <body className="w-full h-full bg-[#000] text-[#e7e9ea]">
         <div className="flex flex-row justify-center w-full h-full">
@@ -63,17 +61,37 @@ export default function RootLayout({
               </div>
               {/* RightNavbar / Trends */}
               <div className="h-full w-[290px] xl:w-[350px] hidden lg:inline mr-[10px]">
-                {/* SearchBar <div className="h-[53px] min-h-[32px] mb-[12px]" /> */}
-                <section className="bg-[#16181c] w-full rounded-2xl flex flex-col justify-start my-3">
-                  <div className="px-4 py-3 font-extrabold text-start">
-                    <span className="text-xl antialiased">Trends for you</span>
+                <div className="h-[44px] min-h-[32px] my-[12px]">
+                  <div className="flex rounded-3xl bg-[#16181c] items-center h-full group/search focus-within:border-[#1d9bf0] border-[1px] border-black">
+                    <Search
+                      size={16}
+                      stroke="#71767b"
+                      strokeWidth={3}
+                      className="ml-4 mr-2 group-focus-within/search:stroke-[#1d9bf0]"
+                    />
+                    <input
+                      placeholder="Search..."
+                      aria-label="This does not do anything! It's just a dummy element."
+                      className="w-full h-full px-2 py-2 outline-none rounded-r-3xl bg-inherit text-[#71767b]"
+                    />
                   </div>
-                  {trends.map((trend, index) => (
-                    <Trend trendData={trend} key={index} />
-                  ))}
-                </section>
-                <div className="flex text-[13px] text-[#71767b]">
-                  <span>@ 2023 Blooprint, Inc.</span>
+                </div>
+                <div className="contents">
+                  <div className="sticky top-3">
+                    <section className="bg-[#16181c] w-full rounded-2xl flex flex-col justify-start my-3">
+                      <div className="px-4 py-3 font-extrabold text-start">
+                        <span className="text-xl antialiased">
+                          Trends for you
+                        </span>
+                      </div>
+                      {shuffledTrendsArray.map((trend, index) => (
+                        <Trend trendData={trend} key={index} />
+                      ))}
+                    </section>
+                    <div className="flex text-[13px] text-[#71767b]">
+                      <span>@ 2023 Blooprint, Inc.</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
