@@ -14,12 +14,36 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/*": ["./src/lib/*"],
+      "@/app/*": ["./src/app/*"],
+      "@/components/*": ["./src/lib/components/*"],
+      "@/fonts/*": ["./src/lib/fonts/*"],
+      "@/posts/*": ["./src/lib/posts/*"],
+      "@/types/*": ["./src/lib/types/*"],
+      "@/utils/*": ["./src/lib/utils/*"],
+      "@/constants/*": ["./src/lib/utils/constants/*"],
+      "@/components": ["./src/lib/components"],
+      "@/fonts": ["./src/lib/fonts"],
+      "@/posts": ["./src/lib/posts"],
+      "@/types": ["./src/lib/types"],
+      "@/utils": ["./src/lib/utils"],
+      "@/constants": ["./src/lib/utils/constants"]
+    },
     "plugins": [
       {
         "name": "next"
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "/src/lib/**/*.ts",
+    "/src/app/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

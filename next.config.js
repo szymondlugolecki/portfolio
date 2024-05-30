@@ -1,16 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: "pbs.twimg.com",
         port: "",
-        pathname: "/profile_images/**",
+        pathname: "/**",
+      }, {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+        port: "",
+        pathname: "/**",
+      }, {
+        protocol: "https",
+        hostname: "media1.tenor.com",
+        port: "",
+        pathname: "/**",
       },
+      
+      
     ],
   },
 };
