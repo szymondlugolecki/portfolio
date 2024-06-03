@@ -43,6 +43,7 @@ export default function LeftNavbar() {
               className="flex justify-end xl:justify-start group"
               href={href}
               key={index}
+              aria-label={`Go to the ${label} page`}
             >
               <div className="flex items-center justify-start gap-3 py-3 px-2 sm:px-3 xl:pl-3 xl:pr-6 rounded-3xl group-hover:bg-opacity-10 group-hover:bg-[#e7e9ea] duration-200">
                 {icon}

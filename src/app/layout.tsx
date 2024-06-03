@@ -7,6 +7,7 @@ import { IconSearch } from "@tabler/icons-react";
 import { getRandomInt, shuffleArray } from "@/lib/utils";
 
 import "./globals.css";
+import type { Metadata } from "next";
 
 const chirpFont = localFont({
   variable: "--font-chirp",
@@ -54,6 +55,11 @@ function getTrends() {
 }
 
 export const runtime = "edge";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "My personal web developer portfolio",
+};
 
 export default async function RootLayout({
   children,

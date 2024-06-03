@@ -1,8 +1,6 @@
 import Image from "next/image";
 
 export default function Avatar({ size }: { size: number }) {
-  const animationEnabled = true;
-
   return (
     <Image
       src="/avatar.gif"

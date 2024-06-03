@@ -18,7 +18,10 @@ export default function SmallPostInteractionPanelButton({
     //   )}
     // </button>
 
-    <button className="min-h-[20px] flex gap-x-1 items-center leading-4 mt-3">
+    <button
+      aria-label="Dummy button"
+      className="min-h-[20px] flex gap-x-1 items-center leading-4 mt-3"
+    >
       <div className="relative">{children}</div>
       {interactionCount && interactionCount > 0 ? (
         <span className="text-[13px] leading-4 text-[#71767b]">
