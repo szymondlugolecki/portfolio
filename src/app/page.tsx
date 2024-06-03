@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Link
         href="/"
-        className="sticky h-[53px] px-4 flex items-center border-b-[1px] border-[#333]"
+        className="h-[53px] px-4 flex items-center border-b-[1px] border-[#333]"
       >
         <h2 className="text-xl font-bold">Home</h2>
       </Link>

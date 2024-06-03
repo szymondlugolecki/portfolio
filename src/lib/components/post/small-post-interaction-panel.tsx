@@ -16,7 +16,7 @@ export default function SmallPostInteractionPanel({
 }) {
   return (
     <div className="w-full">
-      <div className="relative flex justify-between py-1">
+      <div className="relative flex justify-between">
         <SmallPostInteractionPanelButton interactionCount={replyCount}>
           <div className="peer absolute z-50 top-0 bottom-0 left-0 right-0 m-[-8px] rounded-full inline-flex hover:bg-[#1d9bf0] hover:bg-opacity-10 duration-200" />
           <IconMessageCircle2

@@ -44,7 +44,7 @@ export default function LargePost({
                     target="_blank"
                     rel="noreferrer"
                     href={link}
-                    className="text-blue-400 "
+                    className="text-blue-400 break-all"
                   >
                     {link}
                   </a>

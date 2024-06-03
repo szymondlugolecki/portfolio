@@ -8,6 +8,7 @@ import { getRandomInt, shuffleArray } from "@/lib/utils";
 
 import "./globals.css";
 import type { Metadata } from "next";
+import BottomNavbar from "@/lib/components/bottom-navbar";
 
 const chirpFont = localFont({
   variable: "--font-chirp",
@@ -73,13 +74,13 @@ export default async function RootLayout({
       <head />
       <body className="w-full h-full bg-[#000] text-[#e7e9ea] font-chirp">
         <div className="flex flex-row justify-center w-full h-full">
-          <header className="flex justify-end flex-grow h-full min-w-0 min-h-screen m-0">
+          <header className="justify-end flex-grow hidden h-full min-w-0 min-h-screen m-0 sm:flex">
             <LeftNavbar />
           </header>
           <main className="relative flex justify-start flex-grow h-full min-w-0 min-h-screen m-0">
             <div className="w-full md:w-[600px] lg:w-[920px] xl:w-[990px] flex justify-between">
               {/* Main Content */}
-              <div className="h-full max-w-[600px] border-x-[1px] border-[#333] w-full flex flex-col flex-grow">
+              <div className="h-full max-w-[640px] sm:max-w-[600px] border-x-[1px] border-[#333] w-full flex flex-col flex-grow">
                 {/* Home Header */}
                 {/* Posts */}
                 {children}
@@ -123,6 +124,7 @@ export default async function RootLayout({
             </div>
           </main>
         </div>
+        <BottomNavbar />
       </body>
     </html>
   );

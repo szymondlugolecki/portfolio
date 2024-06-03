@@ -26,10 +26,7 @@ export default function PostPage({ params }: { params: { post: string } }) {
 
   return (
     <>
-      <Link
-        href="/"
-        className="sticky h-[53px] px-4 flex justify-start items-center"
-      >
+      <Link href="/" className="h-[53px] px-4 flex justify-start items-center">
         <div className="min-w-[56px]">
           <button
             aria-label="This button does not do anything"

@@ -9,27 +9,24 @@ export const leftNavbarButtonList: NavbarButtonData[] = [
   {
     label: "Home",
     href: "/",
-    icon: <IconHome size={30} />,
+    icon: <IconHome className="w-6 h-6 sm:w-7 sm:h-7" />,
   },
   {
     label: "About me",
     href: "/about-me",
-    icon: <IconUser size={30} />,
+    icon: <IconUser className="w-6 h-6 sm:w-7 sm:h-7" />,
   },
   {
     label: "Tech Stack",
     href: "/tech-stack",
     icon: (
-      <IconBrain
-        size={30}
-        className="relative duration-200 group-hover:text-pink-500"
-      />
+      <IconBrain className="relative w-6 h-6 duration-200 sm:w-7 sm:h-7 group-hover:text-pink-500" />
     ),
   },
   {
     label: "Contact",
     href: "/contact",
-    icon: <IconAt size={30} />,
+    icon: <IconAt className="w-6 h-6 sm:w-7 sm:h-7" />,
   },
 ];
 

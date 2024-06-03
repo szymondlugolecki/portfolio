@@ -21,22 +21,24 @@ export default function Post({
     >
       <div className="flex px-3 py-2 text-[15px] font-normal leading-5 antialiased">
         {/* Avatar Section */}
-        <div className="flex flex-col justify-center h-full">
+        <div className="flex flex-col justify-center h-full min-w-[40px]">
           <Avatar size={40} />
         </div>
         {/* Content & Author */}
         <div className="flex flex-col w-full px-3">
           {/* Post Author */}
-          <div className="flex items-center gap-1 mb-[2px] text-start">
+          <div className="flex items-center gap-x-0.5 text-start">
             <span className="font-bold hover:underline decoration-2 underline-offset-1">
               {author.name}
             </span>
             {author.verified ? <VerifiedCheckbox /> : null}
-            <span className="text-[#71767b]">{author.username}</span>
-            <span className="text-[#71767b]">·</span>
-            <span className="text-[#71767b] hover:underline">
-              {shortDateFormat.format(date)}
-            </span>
+            <div className="flex gap-x-1">
+              <span className="text-[#71767b]">{author.username}</span>
+              <span className="text-[#71767b]">·</span>
+              <span className="text-[#71767b] hover:underline">
+                {shortDateFormat.format(date)}
+              </span>
+            </div>
           </div>
           {/* Post Content */}
           <div>
@@ -49,7 +51,7 @@ export default function Post({
                     target="_blank"
                     rel="noreferrer"
                     href={link}
-                    className="text-blue-400 "
+                    className="text-blue-400 break-all"
                   >
                     {link}
                   </a>
