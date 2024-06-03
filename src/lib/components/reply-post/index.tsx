@@ -38,7 +38,7 @@ export default function ReplyPost({ postData }: { postData: PostData }) {
           </div>
           {/* Post Content */}
           <div>
-            <p className="leading-5 text-pretty">
+            <p className="leading-5 whitespace-pre-line text-pretty">
               {content}
               {link && (
                 <>

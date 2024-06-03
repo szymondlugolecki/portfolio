@@ -18,7 +18,7 @@ const techStackPosts: PostData[] = [
     category: "tech-stack",
     type: "child",
     content:
-      "Other tech that I love\n\nshadcn (shadcn-svelte), SvelteKit Superforms, NextAuth.js, Zod, Prisma, DrizzleORM, Drizzle Kit, Vercel, Cloudflare, Hono, Lucia, Upstash, MeltUI",
+      "Other tech that I love:\n\nshadcn (shadcn-svelte), SvelteKit Superforms, NextAuth.js, Zod, Prisma, DrizzleORM, Drizzle Kit, Vercel, Cloudflare, Hono, Lucia, Upstash, MeltUI",
     date: new Date(1673534895046),
   },
   {
