@@ -35,14 +35,14 @@ const chirpFont = localFont({
 });
 
 // Simulating fetching trends from an API
-export function getTrends() {
+function getTrends() {
   const trends = [
     "Hiring",
     "Web Dev",
     "React",
     "Frontend",
     "Fullstack",
-    "Looking for job",
+    "Looking for a job",
   ];
 
   return Promise.resolve(
@@ -107,7 +107,7 @@ export default async function RootLayout({
                       ))}
                     </section>
                     <div className="flex text-[13px] text-[#71767b]">
-                      <span>@ 2024 Szymon Długołęcki, Inc.</span>
+                      <span>@ 2024 Szymon Długołęcki</span>
                     </div>
                   </div>
                 </div>
