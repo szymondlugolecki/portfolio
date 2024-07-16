@@ -11,7 +11,7 @@ const techStackPosts: PostData[] = [
     category: "tech-stack",
     type: "child",
     content:
-      "Tech I'm most familiar with:\n\nSvelteKit, Next.js, TypeScript, Tailwind CSS, Node.js",
+      "Tech I'm most familiar with:\n\nNext.js, React, SvelteKit, TypeScript, Tailwind CSS, Node.js",
     date: new Date(1673534895046),
   },
   {
